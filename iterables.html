@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Practice | Iterables</title>
+</head>
+<body>
+	<script>
+		'use strict';
+		// let range = {
+		// 	from: 1,
+		// 	to: 5
+		// }
+
+		// range[Symbol.iterator] = function (){
+		// 	return{
+		// 		current: this.from,
+		// 		last: this.to,
+		// 		next(){
+		// 			if(this.current <= this.last){
+		// 				return { done: false, value: this.current++};
+		// 			}else{
+		// 				return {done: true};
+		// 			}
+		// 		}
+		// 	};
+		// };
+
+		// let range = {
+		// 	from: 1,
+		// 	to: 5,
+
+		// 	[Symbol.iterator](){
+		// 		this.current = this.from;
+		// 		return this;
+		// 	},
+
+		// 	next(){
+		// 		if(this.current <= this.to){
+		// 			return{done: false, value: this.current++};
+		// 		}else{
+		// 			return{done: true};
+		// 		}
+		// 	}
+		// }
+
+		// for (let num of range){
+		// 	console.log(num);
+		// }
+
+		// let string = "hello";
+
+		// // does the same as for of...
+		// let iterator = string[Symbol.iterator]();
+
+		// while(true){
+		// 	let result = iterator.next();
+		// 	if(result.done) break;
+		// 	alert(result.value);
+		// }
+
+
+		// create an array from an array like object
+		let arrayLike = {
+			0: "Hello",
+			1: "World!",
+			length: 2
+		}
+
+		let arr = Array.from(arrayLike);
+		alert(arr.pop());
+	</script>
+</body>
+</html>
